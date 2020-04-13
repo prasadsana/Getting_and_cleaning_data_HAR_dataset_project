@@ -77,3 +77,5 @@ data_with_activity_names <- merge(mean_and_std_data, activityLabels, by = "activ
 new_tidy_data <- data_with_activity_names %>%
                     group_by(subject_id, activity_code) %>%
                     summarise_all(mean)
+#create a text file of new tidy data
+write.table(new_tidy_data, "new_tidy_data.txt")
